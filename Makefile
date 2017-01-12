@@ -7,6 +7,8 @@ whoami = $(shell whoami)
 
 webpack:
 	$(shell npm bin)/webpack
+
+webpack.min: webpack
 	@$(shell npm bin)/uglifyjs dist/aplazame.js -o dist/aplazame.min.js -c -m
 
 rollup:
