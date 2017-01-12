@@ -5,6 +5,13 @@ whoami = $(shell whoami)
 
 # TASKS
 
+webpack:
+	$(shell npm bin)/webpack
+	@$(shell npm bin)/uglifyjs dist/aplazame.js -o dist/aplazame.min.js -c -m
+
+rollup:
+	$(shell npm bin)/rollup lib/aplazame.js --output dist/aplazame.js --format umd
+
 git.hooks:
 	@./bin/git-hooks
 
